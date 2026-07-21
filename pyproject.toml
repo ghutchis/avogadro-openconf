@@ -1,0 +1,72 @@
+[project]
+name = "avogadro-openconf"
+version = "0.1.0"
+description = "OpenConf conformer-generation plugins for Avogadro 2"
+authors = [{name = "Geoff Hutchison", email = "geoff.hutchison@gmail.com"}]
+license = "BSD-3-Clause"
+requires-python = ">=3.11"
+dependencies = ["openconf>=0.0.16", "rdkit>=2022.03"]
+
+[project.scripts]
+avogadro-openconf = "avogadro_openconf:main"
+
+[build-system]
+requires = ["uv_build>=0.10.2,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.avogadro]
+minimum-avogadro-version = "1.103"
+
+[[tool.avogadro.menu-commands]]
+identifier = "rapid"
+input-format = "sdf"
+menu = "Extensions"
+submenu = "OpenConf"
+item = "Rapid (virtual screening)…"
+menu-priorities = [ 900, 600 ]
+
+[[tool.avogadro.menu-commands]]
+identifier = "ensemble"
+input-format = "sdf"
+menu = "Extensions"
+submenu = "OpenConf"
+item = "Ensemble (property prediction)…"
+menu-priorities = [ 900, 590 ]
+
+[[tool.avogadro.menu-commands]]
+identifier = "spectroscopic"
+input-format = "sdf"
+menu = "Extensions"
+submenu = "OpenConf"
+item = "Spectroscopic (NMR/IR/VCD)…"
+menu-priorities = [ 900, 580 ]
+
+[[tool.avogadro.menu-commands]]
+identifier = "docking"
+input-format = "sdf"
+menu = "Extensions"
+submenu = "OpenConf"
+item = "Docking (pose recovery)…"
+menu-priorities = [ 900, 570 ]
+
+[[tool.avogadro.menu-commands]]
+identifier = "macrocycle"
+input-format = "sdf"
+menu = "Extensions"
+submenu = "OpenConf"
+item = "Macrocycle…"
+menu-priorities = [ 900, 560 ]
+
+# NOTE: an "Inorganic" item for OpenConf's "transition_metal" preset is
+# intentionally deferred — that preset only exists on OpenConf's unreleased
+# git main branch, not the current PyPI release. Add it here once a release
+# ships the preset (see conformers.py PRESETS).
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+avogadro-openconf = { path = ".", editable = true }
+
+[tool.pixi.tasks]
