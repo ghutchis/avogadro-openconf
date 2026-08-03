@@ -12,17 +12,14 @@ from rdkit import Chem
 # OpenConf force field energies are in kcal/mol; Avogadro works in kJ/mol.
 KCAL_TO_KJ = 4.184
 
-# Map each menu identifier to an OpenConf preset name. An "inorganic" item for
-# OpenConf's "transition_metal" preset is deferred until that preset ships in a
-# PyPI release (it currently exists only on OpenConf's git main branch); add
-# "inorganic": "transition_metal" here and re-add the menu item in pyproject.toml
-# once it is available.
+# Map each menu identifier to an OpenConf preset name.
 PRESETS = {
     "rapid": "rapid",
     "ensemble": "ensemble",
     "spectroscopic": "spectroscopic",
     "docking": "docking",
     "macrocycle": "macrocycle",
+    "inorganic": "transition_metal",
 }
 
 

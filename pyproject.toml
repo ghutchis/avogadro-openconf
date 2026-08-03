@@ -4,8 +4,8 @@ version = "0.1.0"
 description = "OpenConf conformer-generation plugins for Avogadro 2"
 authors = [{name = "Geoff Hutchison", email = "geoff.hutchison@gmail.com"}]
 license = "BSD-3-Clause"
-requires-python = ">=3.11"
-dependencies = ["openconf>=0.0.16", "rdkit>=2022.03"]
+requires-python = ">=3.12"
+dependencies = ["openconf>=0.0.18", "rdkit>=2022.03"]
 
 [project.scripts]
 avogadro-openconf = "avogadro_openconf:main"
@@ -57,10 +57,13 @@ submenu = "OpenConf"
 item = "Macrocycle…"
 menu-priorities = [ 900, 560 ]
 
-# NOTE: an "Inorganic" item for OpenConf's "transition_metal" preset is
-# intentionally deferred — that preset only exists on OpenConf's unreleased
-# git main branch, not the current PyPI release. Add it here once a release
-# ships the preset (see conformers.py PRESETS).
+[[tool.avogadro.menu-commands]]
+identifier = "inorganic"
+input-format = "sdf"
+menu = "Extensions"
+submenu = "OpenConf"
+item = "Inorganic (transition metals)…"
+menu-priorities = [ 900, 550 ]
 
 [tool.pixi.workspace]
 channels = ["conda-forge"]

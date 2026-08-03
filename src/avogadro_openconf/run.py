@@ -12,8 +12,9 @@ def run(args):
     avo_input = json.load(sys.stdin)
     output = None
 
-    if args.feature in ("rapid", "ensemble", "spectroscopic", "docking",
-                        "macrocycle"):
+    from .conformers import PRESETS
+
+    if args.feature in PRESETS:
         from .conformers import generate
         output = generate(avo_input, args.feature)
 

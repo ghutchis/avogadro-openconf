@@ -12,13 +12,10 @@ an energy-ranked ensemble:
 - **Spectroscopic** — exhaustive Boltzmann ensemble for NMR/IR/VCD
 - **Docking** — maximize bioactive-pose recall
 - **Macrocycle** — macrocyclic ring systems (ring size ≥ 10)
+- **Inorganic** — organometallic and coordination complexes
 
 Each conformer is tagged with a relative ``<energy>`` (kJ/mol) so Avogadro can
 plot the conformer energies.
-
-An **Inorganic** item (OpenConf's ``transition_metal`` preset) is planned once
-that preset appears in an OpenConf PyPI release — it currently exists only on
-the project's unreleased git ``main`` branch.
 
 ## Suggestions
 
