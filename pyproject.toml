@@ -1,11 +1,11 @@
 [project]
 name = "avogadro-openconf"
-version = "0.1.1"
+version = "0.1.2"
 description = "OpenConf conformer-generation plugins for Avogadro 2"
 authors = [{name = "Geoff Hutchison", email = "geoff.hutchison@gmail.com"}]
 license = "BSD-3-Clause"
 requires-python = ">=3.12"
-dependencies = ["openconf>=0.0.19", "rdkit>=2022.03"]
+dependencies = ["openconf>=0.0.21", "rdkit>=2022.03"]
 
 [project.scripts]
 avogadro-openconf = "avogadro_openconf:main"
